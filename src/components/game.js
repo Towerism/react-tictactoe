@@ -46,9 +46,10 @@ export class Game extends React.Component {
       const desc = move ?
         'Go to move #' + move :
         'Go to game start';
+      const moveClass = move === this.state.stepNumber ? 'current-move' : '';
       return (
         <li key={move}>
-          <button onClick={() => this.jumpTo(move)}>{desc}</button>
+          <button className={moveClass} onClick={() => this.jumpTo(move)}>{desc}</button>
         </li>
       );
     })
